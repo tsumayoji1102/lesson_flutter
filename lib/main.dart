@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:lesson_flutter/lesson/lesson_3.dart';
-import 'package:lesson_flutter/lesson/lesson_3_practice.dart';
 
 /// アプリ起動はここから行われる。
 void main() {
@@ -17,7 +16,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.lightGreen),
       ),
-      home: CafeMenuScreen(), //const PracticeLayout(),
+      home: const PracticeLayout(),
     );
   }
 }
