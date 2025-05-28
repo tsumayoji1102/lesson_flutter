@@ -111,6 +111,37 @@ class PracticeLayout extends StatelessWidget {
 
               SizedBox(height: 16),
 
+              _Header(title: "GestureDetector, InkWell"),
+
+              GestureDetector(
+                onTap: () {
+                  print("GestureDetectorをタップしました。");
+                },
+                child: Container(
+                  padding: const EdgeInsets.all(16),
+                  color: Colors.red,
+                  child: Text(
+                    "GestureDetector",
+                    style: TextStyle(color: Colors.white),
+                  ),
+                ),
+              ),
+
+              SizedBox(height: 16),
+
+              InkWell(
+                onTap: () {
+                  print("InkWellをタップしました。");
+                },
+                child: Container(
+                  padding: const EdgeInsets.all(16),
+                  color: Colors.blue,
+                  child: Text("InkWell", style: TextStyle(color: Colors.white)),
+                ),
+              ),
+
+              SizedBox(height: 16),
+
               _Header(title: "Container以外"),
 
               // width, heightだけ設定したい場合はSizedBox
