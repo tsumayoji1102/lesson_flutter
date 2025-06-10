@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 // import 'package:lesson_flutter/lesson/lesson_3.dart';
-import 'package:lesson_flutter/lesson/lesson_4.dart';
+// import 'package:lesson_flutter/lesson/lesson_4.dart';
+import 'package:lesson_flutter/lesson/lesson_5.dart';
 
 /// アプリ起動はここから行われる。
 void main() {
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.lightGreen),
       ),
-      home: const Lesson4Widget(),
+      home: const Lesson5Widget(),
     );
   }
 }
