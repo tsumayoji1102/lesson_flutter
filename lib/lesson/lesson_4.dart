@@ -130,13 +130,6 @@ class _Lesson4WidgetState extends State<Lesson4Widget> {
                   return Text(_names[index]);
                 },
               ),
-
-              // Flexible(
-              //   child: Column(
-              //     mainAxisSize: MainAxisSize.min,
-              //     children: _names.map((name) => Text(name)).toList(),
-              //   ),
-              // ),
             ],
           ),
         ),
