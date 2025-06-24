@@ -6,9 +6,6 @@ class PageTabView extends HookWidget {
 
   @override
   Widget build(BuildContext context) {
-    final pageCount = 3;
-    final pageController = usePageController(initialPage: 0);
-
     /// PageViewを使って、ページを切り替えることができる。
     return PageView(
       children: [
@@ -22,22 +19,5 @@ class PageTabView extends HookWidget {
         print('現在のページ: $value');
       },
     );
-    // return PageView.builder(
-    //   itemCount: pageCount,
-    //   controller: pageController,
-    //   //
-    //   itemBuilder: (context, index) {
-    //     return Center(
-    //       child: Text(
-    //         'Page ${pages[index]}',
-    //         style: const TextStyle(fontSize: 24),
-    //       ),
-    //     );
-    //   },
-    //   onPageChanged: (index) {
-    //     // ページが変更されたときの処理
-    //     print('現在のページ: $index');
-    //   },
-    // );
   }
 }
