@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:lesson_flutter/lesson/lesson_6.dart/bottom_tabs/router_pages/detail_page.dart';
+import 'package:lesson_flutter/lesson/lesson_6.dart/bottom_tabs/router_pages/official_page.dart';
+import 'package:lesson_flutter/lesson/lesson_6.dart/bottom_tabs/routers_view.dart';
 // import 'package:lesson_flutter/lesson/lesson_3.dart';
-// import 'package:lesson_flutter/lesson/lesson_4.dart';
-import 'package:lesson_flutter/lesson/lesson_5.dart';
+import 'package:lesson_flutter/lesson/lesson_6.dart/lesson_6.dart';
 
 /// アプリ起動はここから行われる。
 void main() {
@@ -18,7 +20,17 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.lightGreen),
       ),
-      home: const Lesson5Widget(),
+
+      /// アプリの初期画面を設定する.
+      /// 下のroutesに設定している画面から設定する。
+      initialRoute: "/",
+
+      /// ここに、遷移できる画面を設定する.
+      routes: {
+        "/": (context) => const Lesson6Widget(),
+        AppRoutes.detailPage.path: (context) => const DetailPage(),
+        AppRoutes.officialPage.path: (context) => const OfficialPage(),
+      },
     );
   }
 }
