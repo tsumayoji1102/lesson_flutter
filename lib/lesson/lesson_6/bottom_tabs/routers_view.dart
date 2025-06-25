@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lesson_flutter/lesson/lesson_6.dart/bottom_tabs/router_pages/detail_page.dart';
+import 'package:lesson_flutter/lesson/lesson_6/bottom_tabs/router_pages/detail_page.dart';
 
 class RoutersView extends StatelessWidget {
   const RoutersView({super.key});

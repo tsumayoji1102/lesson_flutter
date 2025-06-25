@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:lesson_flutter/lesson/lesson_6.dart/bottom_tabs/home_tab_view.dart';
-import 'package:lesson_flutter/lesson/lesson_6.dart/bottom_tabs/page_tab_view.dart';
-import 'package:lesson_flutter/lesson/lesson_6.dart/bottom_tabs/routers_view.dart';
+import 'package:lesson_flutter/lesson/lesson_6/bottom_tabs/home_tab_view.dart';
+import 'package:lesson_flutter/lesson/lesson_6/bottom_tabs/page_tab_view.dart';
+import 'package:lesson_flutter/lesson/lesson_6/bottom_tabs/routers_view.dart';
 
 class Lesson6Widget extends HookWidget {
   const Lesson6Widget({super.key});
@@ -29,9 +29,9 @@ class Lesson6Widget extends HookWidget {
           BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
           BottomNavigationBarItem(
             icon: Icon(Icons.settings),
-            label: 'Settings',
+            label: 'PageView',
           ),
-          BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
+          BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Routers'),
         ],
         onTap: (index) {
           // タブがタップされたときの処理

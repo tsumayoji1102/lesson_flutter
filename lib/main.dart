@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:lesson_flutter/lesson/lesson_6.dart/bottom_tabs/router_pages/detail_page.dart';
-import 'package:lesson_flutter/lesson/lesson_6.dart/bottom_tabs/router_pages/official_page.dart';
-import 'package:lesson_flutter/lesson/lesson_6.dart/bottom_tabs/routers_view.dart';
+import 'package:lesson_flutter/lesson/lesson_6/bottom_tabs/router_pages/detail_page.dart';
+import 'package:lesson_flutter/lesson/lesson_6/bottom_tabs/router_pages/official_page.dart';
+import 'package:lesson_flutter/lesson/lesson_6/bottom_tabs/routers_view.dart';
 // import 'package:lesson_flutter/lesson/lesson_3.dart';
-import 'package:lesson_flutter/lesson/lesson_6.dart/lesson_6.dart';
+import 'package:lesson_flutter/lesson/lesson_6/lesson_6.dart';
 
 /// アプリ起動はここから行われる。
 void main() {
