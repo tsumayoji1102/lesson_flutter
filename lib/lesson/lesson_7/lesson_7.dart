@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
+
+/// freezedクラスを作成する場合、こちらが必要
+part 'lesson_7.freezed.dart';
 
 /// 実行用。
 void main() {
@@ -54,6 +58,23 @@ class Car {
     print("これは車のクラスです。");
     print("車の情報を管理するためのクラスです。");
   }
+}
+
+/// freezedを使用してCarモデルを定義することもできます。
+/// freezedは、Dartのコード生成ライブラリで、イミュータブルなデータクラスを簡単に作成できます。
+@freezed
+abstract class FreezedCar with _$FreezedCar {
+  const factory FreezedCar({
+    @Default("") String name, // デフォルト値を設定などできる
+    required String brand,
+    required int year,
+    required int price,
+    required Color color,
+    String? ownerName,
+  }) = _FreezedCar;
+
+  /// freezedでは、toString()やhashCode、==演算子などのメソッドも自動生成されます。
+  /// これにより、データクラスの比較や表示が簡単になります。
 }
 
 var car = Car(
