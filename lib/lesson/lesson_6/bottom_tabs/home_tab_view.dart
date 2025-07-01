@@ -15,10 +15,18 @@ class HomeTabView extends StatelessWidget {
         ),
 
         /// ③ TabBarViewを使用して、タブごとの内容を表示。
-        body: const TabBarView(
+        body: TabBarView(
           children: [
-            Center(child: Text('Content for Tab 1')),
-            Center(child: Text('Content for Tab 2')),
+            Center(
+              child: Image.network(
+                'https://yt3.googleusercontent.com/EpsyQXQJscAYox5DJW90MqSYznQwvMMeYCuIpv8Bjp4I7L6RTx8fn36Z2icCMy0EfTljUPxhINo=s900-c-k-c0x00ffffff-no-rj',
+              ),
+            ),
+            Center(
+              child: Image.network(
+                'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwdEEO-mCKk-1ZV-y9xarZawuakiH4VY381g&s',
+              ),
+            ),
           ],
         ),
       ),

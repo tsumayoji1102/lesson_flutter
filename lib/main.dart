@@ -3,7 +3,8 @@ import 'package:lesson_flutter/lesson/lesson_6/bottom_tabs/router_pages/detail_p
 import 'package:lesson_flutter/lesson/lesson_6/bottom_tabs/router_pages/official_page.dart';
 import 'package:lesson_flutter/lesson/lesson_6/bottom_tabs/routers_view.dart';
 // import 'package:lesson_flutter/lesson/lesson_3.dart';
-import 'package:lesson_flutter/lesson/lesson_6/lesson_6.dart';
+// import 'package:lesson_flutter/lesson/lesson_6/lesson_6.dart';
+import 'package:lesson_flutter/lesson/lesson_7/lesson_7.dart';
 
 /// アプリ起動はここから行われる。
 void main() {
@@ -27,7 +28,7 @@ class MyApp extends StatelessWidget {
 
       /// ここに、遷移できる画面を設定する.
       routes: {
-        "/": (context) => const Lesson6Widget(),
+        "/": (context) => Lesson7Widget(),
         AppRoutes.detailPage.path: (context) => const DetailPage(),
         AppRoutes.officialPage.path: (context) => const OfficialPage(),
       },
