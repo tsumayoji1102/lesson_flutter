@@ -65,10 +65,10 @@ class Lesson8Widget extends HookWidget {
       final baseUrl = 'https://api.data.metro.tokyo.lg.jp/v1';
 
       /// apiのpathを指定。（APIにより異なる）
-      final path = '/PublicFacility';
+      final path = '/CulturalProperty'; // ここは実際のAPIのエンドポイントに合わせて変更してください。
       final response = await http.get(
         Uri.parse(
-          "$baseUrl$path", // ここに実際のエンドポイントを指定してください
+          "$baseUrl$path?ID=0000000008", // ここに実際のエンドポイントを指定してください
         ),
       );
 
