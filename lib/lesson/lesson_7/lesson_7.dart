@@ -60,6 +60,38 @@ class Car {
   }
 }
 
+/// mixinsを使用して、クラスに機能を追加することもできます。
+mixin VehicleMixin {
+  /// 車の説明を出力するメソッド.
+  /// このメソッドは、Carクラスに追加される機能です。
+  void printIsHighPrice(int price) {
+    if (price > 1000) {
+      print("この乗り物は高級です。");
+    } else {
+      print("この乗り物は一般的です。");
+    }
+  }
+}
+
+/// 名前付きコンストラクタ
+class User {
+  final String name;
+  final int age;
+
+  User(this.name, this.age);
+
+  /// 名前付きコンストラクタ.
+  /// 用途に応じて、複数のconstractorを定義できる
+  User.guest() : name = 'ゲスト', age = 0;
+  User.fromJson(Map<String, dynamic> json)
+    : name = json['name'],
+      age = json['age'];
+
+  factory User.anonymous() {
+    return User('匿名', 0);
+  }
+}
+
 /// freezedを使用してCarモデルを定義することもできます。
 /// freezedは、Dartのコード生成ライブラリで、イミュータブルなデータクラスを簡単に作成できます。
 @freezed
