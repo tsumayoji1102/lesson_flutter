@@ -1,3 +1,4 @@
+// import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:lesson_flutter/lesson/lesson_6/bottom_tabs/router_pages/detail_page.dart';
 import 'package:lesson_flutter/lesson/lesson_6/bottom_tabs/router_pages/official_page.dart';
@@ -5,11 +6,13 @@ import 'package:lesson_flutter/lesson/lesson_6/bottom_tabs/routers_view.dart';
 // import 'package:lesson_flutter/lesson/lesson_3.dart';
 // import 'package:lesson_flutter/lesson/lesson_6/lesson_6.dart';
 // import 'package:lesson_flutter/lesson/lesson_7/lesson_7.dart';
-import 'package:lesson_flutter/lesson/lesson_8/lesson_8.dart';
+// import 'package:lesson_flutter/lesson/lesson_8/lesson_8.dart';
 import 'package:lesson_flutter/lesson/lesson_8/lesson_8_search.dart';
 
 /// アプリ起動はここから行われる。
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  // await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   runApp(const MyApp());
 }
 
