@@ -1,5 +1,7 @@
 // import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:lesson_flutter/firebase_options.dart';
 import 'package:lesson_flutter/lesson/lesson_6/bottom_tabs/router_pages/detail_page.dart';
 import 'package:lesson_flutter/lesson/lesson_6/bottom_tabs/router_pages/official_page.dart';
 import 'package:lesson_flutter/lesson/lesson_6/bottom_tabs/routers_view.dart';
@@ -7,12 +9,12 @@ import 'package:lesson_flutter/lesson/lesson_6/bottom_tabs/routers_view.dart';
 // import 'package:lesson_flutter/lesson/lesson_6/lesson_6.dart';
 // import 'package:lesson_flutter/lesson/lesson_7/lesson_7.dart';
 // import 'package:lesson_flutter/lesson/lesson_8/lesson_8.dart';
-import 'package:lesson_flutter/lesson/lesson_8/lesson_8_search.dart';
+import 'package:lesson_flutter/lesson/lesson_9/auth_gate.dart';
 
 /// アプリ起動はここから行われる。
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  // await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   runApp(const MyApp());
 }
 
@@ -33,7 +35,7 @@ class MyApp extends StatelessWidget {
 
       /// ここに、遷移できる画面を設定する.
       routes: {
-        "/": (context) => Lesson8Search(), // 初期表示できる画面はこちらから設定する
+        "/": (context) => AuthGate(), // 初期表示できる画面はこちらから設定する
         AppRoutes.detailPage.path: (context) => const DetailPage(),
         AppRoutes.officialPage.path: (context) => const OfficialPage(),
       },
