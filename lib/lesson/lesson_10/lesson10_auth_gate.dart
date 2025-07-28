@@ -1,11 +1,11 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:lesson_flutter/lesson/lesson_9/home_page.dart';
+import 'package:lesson_flutter/lesson/lesson_10/firestore_post_list.dart';
 import 'package:lesson_flutter/lesson/lesson_9/login_page.dart';
 
 /// 認証状態を監視し、ログインしているかどうかで画面を切り替える
-class AuthGate extends StatelessWidget {
-  const AuthGate({super.key});
+class Lesson10AuthGate extends StatelessWidget {
+  const Lesson10AuthGate({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +18,7 @@ class AuthGate extends StatelessWidget {
           return const Center(child: CircularProgressIndicator());
         }
         if (snapshot.hasData) {
-          return const HomePage();
+          return const FirestorePostList();
         }
         return const LoginPage();
       },
