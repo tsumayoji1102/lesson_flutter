@@ -49,6 +49,9 @@ class Lesson10HomePage extends HookWidget {
               /// - 投稿一覧が画面いっぱいになるようにExpandedを使用します。
               Expanded(child: PostList()),
 
+              /// 投稿一覧をリアルタイムで更新する場合は、以下のようにRealTimePostListを使用します。
+              /// Expanded(child: RealTimePostList()),
+
               /// [投稿追加画面]
               /// - 投稿を追加するためのテキストフィールド、ボタンを配置します。
               /// - 横並びに配置するためにRowを使用します。
