@@ -15,7 +15,7 @@ import 'package:lesson_flutter/lesson/lesson_6/bottom_tabs/routers_view.dart';
 /// アプリ起動はここから行われる。
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  // await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   runApp(const MyApp());
 }
 
