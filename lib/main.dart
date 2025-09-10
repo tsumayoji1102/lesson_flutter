@@ -22,7 +22,7 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   /// Firebase系を動かす場合は、初期セットアップしたのちにこちらを読み込ませる必要あり。
-  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+  //await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   runApp(const MyApp());
 }
 
@@ -51,7 +51,7 @@ class MyApp extends StatelessWidget {
       /// 対応している言語を追加する。
       supportedLocales: [
         Locale('en'), // English
-        Locale('es'), // Spanish
+        Locale('ja'), // Japanese
       ],
 
       /// ローカライズのデリゲートを追加する。

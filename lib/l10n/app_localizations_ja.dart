@@ -73,6 +73,7 @@ class AppLocalizationsJa extends AppLocalizations {
       count,
       locale: localeName,
       other: '$count個のアイテム',
+      one: '1個のアイテム',
       zero: 'アイテムなし',
     );
     return '$_temp0';
