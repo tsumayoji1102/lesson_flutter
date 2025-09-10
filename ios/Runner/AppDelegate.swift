@@ -1,6 +1,6 @@
 import Flutter
 import UIKit
-
+import AudioToolbox
 @main
 @objc class AppDelegate: FlutterAppDelegate {
   override func application(
@@ -8,6 +8,29 @@ import UIKit
     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
   ) -> Bool {
     GeneratedPluginRegistrant.register(with: self)
+
+    /** FlutterViewControllerを取得
+    *.  iOS上でFlutterを表示するための画面（このインスタンスでFlutterは動いている）
+    */
+    let controller : FlutterViewController = window?.rootViewController as! FlutterViewController
+
+    /** チャンネルをここで定義する */
+    let soundChannel = FlutterMethodChannel(
+      name: "demo/sound", 
+      binaryMessenger: controller.binaryMessenger
+    )
+    /** チャンネルのメソッドをここで定義する. 
+    *.  Flutter側で呼び出されたら、ここが実行される。
+    *.  call.methodでメソッド名を取得できるので、条件分岐して処理を分ける。
+    */
+    soundChannel.setMethodCallHandler { call, result in
+        if call.method == "playSound" {
+            /** SMS受信音を鳴らすメソッド */
+            AudioServicesPlaySystemSound(1007) 
+            /** 何かしら結果を返す。nilはvoidとして扱われる。 */
+            result(nil)
+        }
+    }
     return super.application(application, didFinishLaunchingWithOptions: launchOptions)
   }
 }

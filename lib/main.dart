@@ -1,8 +1,13 @@
 // import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:lesson_flutter/firebase_options.dart';
-import 'package:lesson_flutter/lesson/lesson_10/lesson10_auth_gate.dart';
+import 'package:lesson_flutter/l10n/app_localizations.dart';
+import 'package:lesson_flutter/lesson/lesson_13/lesson_13_widget.dart';
+// import 'package:lesson_flutter/lesson/lesson_10/lesson10_auth_gate.dart';
+import 'package:lesson_flutter/lesson/lesson_13/localization_demo_page.dart';
+import 'package:lesson_flutter/lesson/lesson_13/method_channels_page.dart';
 import 'package:lesson_flutter/lesson/lesson_6/bottom_tabs/router_pages/detail_page.dart';
 import 'package:lesson_flutter/lesson/lesson_6/bottom_tabs/router_pages/official_page.dart';
 import 'package:lesson_flutter/lesson/lesson_6/bottom_tabs/routers_view.dart';
@@ -15,6 +20,8 @@ import 'package:lesson_flutter/lesson/lesson_6/bottom_tabs/routers_view.dart';
 /// アプリ起動はここから行われる。
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
+  /// Firebase系を動かす場合は、初期セットアップしたのちにこちらを読み込ませる必要あり。
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   runApp(const MyApp());
 }
@@ -36,10 +43,25 @@ class MyApp extends StatelessWidget {
 
       /// ここに、遷移できる画面を設定する.
       routes: {
-        "/": (context) => Lesson10AuthGate(), // 初期表示できる画面はこちらから設定する
+        "/": (context) => const Lesson13Widget(), // 初期表示できる画面はこちらから設定する
         AppRoutes.detailPage.path: (context) => const DetailPage(),
         AppRoutes.officialPage.path: (context) => const OfficialPage(),
       },
+
+      /// 対応している言語を追加する。
+      supportedLocales: [
+        Locale('en'), // English
+        Locale('es'), // Spanish
+      ],
+
+      /// ローカライズのデリゲートを追加する。
+      /// これを追加しないと、多言語化が動作しない。
+      localizationsDelegates: [
+        AppLocalizations.delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
     );
   }
 }
