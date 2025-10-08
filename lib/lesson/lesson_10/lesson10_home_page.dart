@@ -97,3 +97,12 @@ class Lesson10HomePage extends HookWidget {
     }, SetOptions(merge: true));
   }
 }
+
+class AAA extends StatelessWidget {
+  const AAA({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(child: SingleChildScrollView());
+  }
+}

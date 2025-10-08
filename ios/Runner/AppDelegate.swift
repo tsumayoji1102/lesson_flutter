@@ -16,7 +16,7 @@ import AudioToolbox
 
     /** チャンネルをここで定義する */
     let soundChannel = FlutterMethodChannel(
-      name: "demo/sound", 
+      name: "example", 
       binaryMessenger: controller.binaryMessenger
     )
     /** チャンネルのメソッドをここで定義する. 
@@ -30,7 +30,26 @@ import AudioToolbox
             /** 何かしら結果を返す。nilはvoidとして扱われる。 */
             result(nil)
         }
+        if call.method == "getText" {
+            result("iOS最高")
+        }
+        if call.method == "vibrate" {
+            self.vibrate()
+            result("バイブレーションしました")
+        }
     }
     return super.application(application, didFinishLaunchingWithOptions: launchOptions)
+  }
+
+  /** バイブレーションを実行するメソッド */
+  private func vibrate() {
+    // iOS 10以降でHaptic Feedbackを使用
+    if #available(iOS 10.0, *) {
+      let impactFeedback = UIImpactFeedbackGenerator(style: .medium)
+      impactFeedback.impactOccurred()
+    } else {
+      // iOS 9以前では従来のバイブレーション
+      AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
+    }
   }
 }

@@ -19,6 +19,9 @@ class MainActivity: FlutterActivity() {
                         playSystemSound()
                         result.success(null)
                     }
+                    "getText" -> {
+                        result.success("Android最高")
+                    }
                     else -> {
                         result.notImplemented()
                     }
@@ -35,6 +38,18 @@ class MainActivity: FlutterActivity() {
         } catch (e: Exception) {
             // エラーハンドリング（ログ出力など）
             e.printStackTrace()
+        }
+    }
+
+    private fun vibrate() {
+        val duration = call.argument<Int>("duration") ?: 100
+        val vibrator = getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
+        
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            vibrator.vibrate(VibrationEffect.createOneShot(duration, VibrationEffect.DEFAULT_AMPLITUDE))
+        } else {
+            @Suppress("DEPRECATION")
+            vibrator.vibrate(duration)
         }
     }
 }
